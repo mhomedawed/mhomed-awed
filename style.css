@@ -1,0 +1,244 @@
+/* ========================================
+   style.css - التنسيقات الموحدة للواجهات
+   ======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', 'Cairo', system-ui, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* ===== البطاقة الزجاجية الموحدة ===== */
+.glass-card {
+    max-width: 460px;
+    width: 100%;
+    background: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(12px);
+    border-radius: 28px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 2rem;
+    box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== الشعار والعنوان ===== */
+.logo {
+    text-align: center;
+    margin-bottom: 1.8rem;
+}
+
+.logo i {
+    font-size: 2.8rem;
+    background: linear-gradient(135deg, #60a5fa, #a78bfa);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 0.5rem;
+}
+
+h2 {
+    color: #f1f5f9;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.subtitle {
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+
+/* ===== حقول الإدخال ===== */
+.input-group {
+    margin-bottom: 1.1rem;
+}
+
+.input-field {
+    background: rgba(30, 41, 59, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 18px;
+    padding: 0.85rem 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.2s;
+}
+
+.input-field i {
+    color: #94a3b8;
+    font-size: 1.1rem;
+    width: 24px;
+}
+
+.input-field input {
+    background: transparent;
+    border: none;
+    width: 100%;
+    color: #ffffff;
+    font-size: 1rem;
+    outline: none;
+}
+
+.input-field input::placeholder {
+    color: #64748b;
+}
+
+.input-field:focus-within {
+    border-color: #3b82f6;
+    background: rgba(30, 41, 59, 0.9);
+}
+
+/* ===== صف الاسمين (لل تسجيل فقط) ===== */
+.name-row {
+    display: flex;
+    gap: 12px;
+}
+
+.name-row .input-group {
+    flex: 1;
+    margin-bottom: 1.1rem;
+}
+
+/* ===== خيارات إضافية ===== */
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 0 1.5rem;
+    font-size: 0.85rem;
+}
+
+.remember {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #cbd5e1;
+}
+
+.remember input {
+    accent-color: #3b82f6;
+    cursor: pointer;
+}
+
+.forgot {
+    color: #93c5fd;
+    text-decoration: none;
+}
+
+.forgot:hover {
+    text-decoration: underline;
+}
+
+/* ===== خيار الموافقة على الشروط (للتسجيل) ===== */
+.terms {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 1.2rem 0 1.5rem;
+    color: #cbd5e1;
+    font-size: 0.85rem;
+}
+
+.terms input {
+    accent-color: #3b82f6;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.terms a {
+    color: #60a5fa;
+    text-decoration: none;
+}
+
+.terms a:hover {
+    text-decoration: underline;
+}
+
+/* ===== الأزرار ===== */
+.btn-primary {
+    background: linear-gradient(95deg, #3b82f6, #8b5cf6);
+    width: 100%;
+    border: none;
+    border-radius: 32px;
+    padding: 0.9rem;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+    margin-bottom: 1.5rem;
+}
+/* تحسين الرابط ليكون مطابقاً للزر */
+.login-btn {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    background: linear-gradient(95deg, #3b82f6, #8b5cf6);
+    border: none;
+    border-radius: 32px;
+    padding: 0.9rem;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+    margin-bottom: 1.5rem;
+    text-decoration: none;
+}
+
+.login-btn:hover {
+    opacity: 0.92;
+    transform: scale(0.98);
+}
+
+.btn-primary:hover {
+    opacity: 0.92;
+    transform: scale(0.98);
+}
+
+/* ===== الروابط السفلية ===== */
+.footer-link {
+    text-align: center;
+    color: #94a3b8;
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.footer-link a {
+    color: #60a5fa;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.footer-link a:hover {
+    text-decoration: underline;
+}
+
+/* ===== التوافق مع الجوال ===== */
+@media (max-width: 480px) {
+    .glass-card {
+        padding: 1.5rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    .name-row {
+        flex-direction: column;
+        gap: 0;
+    }
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إنشاء حساب جديد</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="glass-card">
+    <div class="logo">
+        <i class="fas fa-user-plus"></i>
+        <h2>إنشاء حساب جديد</h2>
+        <p class="subtitle">سجل بياناتك للانضمام إلينا</p>
+    </div>
+
+    <form id="signupForm">
+        <!-- صف الاسم الأول والأخير -->
+        <div class="name-row">
+            <div class="input-group">
+                <div class="input-field">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="firstName" placeholder="الاسم الأول" required>
+                </div>
+            </div>
+            <div class="input-group">
+                <div class="input-field">
+                    <i class="fas fa-user-friends"></i>
+                    <input type="text" id="lastName" placeholder="الاسم الأخير" required>
+                </div>
+            </div>
+        </div>
+
+        <div class="input-group">
+            <div class="input-field">
+                <i class="fas fa-envelope"></i>
+                <input type="email" id="email" placeholder="البريد الإلكتروني" required>
+            </div>
+        </div>
+
+        <div class="input-group">
+            <div class="input-field">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="password" placeholder="كلمة المرور" required>
+            </div>
+        </div>
+
+        <div class="input-group">
+            <div class="input-field">
+                <i class="fas fa-check-circle"></i>
+                <input type="password" id="confirmPassword" placeholder="تأكيد كلمة المرور" required>
+            </div>
+        </div>
+
+        <label class="terms">
+            <input type="checkbox" id="agreeTerms" required>
+            <span>أوافق على <a href="#">الشروط والأحكام</a> وسياسة <a href="#">الخصوصية</a></span>
+        </label>
+
+        <a href="index.html" class="login-btn" style="text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 8px;">
+    دخول <i class="fas fa-arrow-left"></i>
+</a>
+    </form>
+
+    <div class="footer-link">
+        لديك حساب بالفعل؟ <a href="index.html">تسجيل الدخول</a>
+    </div>
+</div>
+
+
+<script>
+    document.getElementById('signupForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const firstName = document.getElementById('firstName').value;
+        const lastName = document.getElementById('lastName').value;
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('confirmPassword').value;
+        const agreeTerms = document.getElementById('agreeTerms').checked;
+
+        if (!firstName || !lastName || !email || !password || !confirmPassword) {
+            alert('يرجى ملء جميع الحقول');
+            return;
+        }
+
+        if (password !== confirmPassword) {
+            alert('كلمة المرور وتأكيدها غير متطابقتين');
+            return;
+        }
+
+        if (password.length < 6) {
+            alert('كلمة المرور يجب أن تكون 6 أحرف على الأقل');
+            return;
+        }
+
+        if (!agreeTerms) {
+            alert('يرجى الموافقة على الشروط والأحكام');
+            return;
+        }
+
+        alert(`مرحباً ${firstName} ${lastName}!\nتم إنشاء حسابك بنجاح. يمكنك الآن تسجيل الدخول.`);
+    });
+</script>
+</body>
+</html>
